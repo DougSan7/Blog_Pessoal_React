@@ -6,9 +6,17 @@ import Navbar from './components/navbar/Navbar'
 function App() {
 	return (
 		<>
-			<Navbar />
-			<Home />
-			<Footer />
+			<BrowserRouter>
+				<Navbar />
+				<div className="min-h-[80vh]">
+					<Routes>
+						<Route path="/" element={<Login />} />
+						<Route path="/home" element={<Home />} />
+						<Route path="/cadastro"	element={<Cadastro />}/>
+					</Routes>
+				</div>
+				<Footer />
+			</BrowserRouter>
 		</>
 	)
 }
